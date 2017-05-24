@@ -2,7 +2,21 @@
   <div id="header">
     <img id="logo" src="../../../assets/img/logo.jpg"/><span id="loginNowText">欢迎登录</span>
     <div id="helpDiv">
-      <a href="#">帮助</a><a href="#">注册</a>
+      <img src="../../../assets/img/useModel.png" height="16" width="16"/><a href="#">帮助</a><a href="#">注册</a>
+    </div>
+  </div>
+  <div id="allContent">
+    <div id="content">
+      <img id="contentImg" src="../../../assets/img/login-center.png"/>
+      <div id="loginDiv">
+        <div id="loginTitle">
+          会员登录
+        </div>
+        <form>
+          <input name="account" [(ngModel)]="userModel.account">\
+          <input name="account" [(ngModel)]="userModel.password">
+        </form>
+      </div>
     </div>
   </div>
 </div>

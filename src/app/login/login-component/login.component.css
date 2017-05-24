@@ -2,6 +2,7 @@
   width: 1000px;
   height: 55px;
   margin: auto;
+
 }
 #logo{
   float: left;
@@ -18,4 +19,46 @@
 #helpDiv{
   float: right;
   margin-top: 20px;
+}
+
+#helpDiv a{
+  text-decoration: none;
+  margin-left: 10px;
+}
+#helpDiv a:first-child{
+  margin-left: 5px;
+  display: inline-block;
+  border-right: solid 1px rgb(213,213,213);
+}
+#allContent{
+  height: 400px;
+  background:-moz-linear-gradient(left,rgb(3,6,6),#f6f6f8);
+  background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(193,11,0)),to(rgb(193,11,0)));
+  margin-top: 20px;
+  background-image: url("../../../assets/img/login-center-bg.png");
+}
+#content{
+  margin: auto;
+  width: 1100px;
+}
+#contentImg{
+  display: inline-block;
+  height: 370px;
+  margin-top: 30px;
+}
+#loginDiv{
+  width: 300px;
+  height: 350px;
+  background: white;
+  float: right;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgb(150,150,150);
+}
+#loginTitle{
+  font-size: 15px;
+  border-bottom: solid 1px rgb(200,200,200);
+  height: 35px;
+  line-height: 35px;
+  padding-left: 20px;
 }
