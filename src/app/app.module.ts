@@ -4,6 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login-component/login.component';
+import {LoginModule} from './login/login.module';
+import {RouterModule} from '@angular/router';
+import {rootRouterConfig} from 'app/app.routes';
 
 @NgModule({
   declarations: [
@@ -12,7 +16,9 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(rootRouterConfig),
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]
