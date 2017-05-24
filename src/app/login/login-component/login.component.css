@@ -62,3 +62,13 @@
   line-height: 35px;
   padding-left: 20px;
 }
+#loginFormDiv{
+  margin: auto;
+  width: 270px;
+  margin-top: 20px;
+}
+
+.form-control{
+  width: 260px;
+
+}

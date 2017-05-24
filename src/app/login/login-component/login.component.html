@@ -12,10 +12,13 @@
         <div id="loginTitle">
           会员登录
         </div>
-        <form>
-          <input name="account" [(ngModel)]="userModel.account">\
-          <input name="account" [(ngModel)]="userModel.password">
-        </form>
+        <div id="loginFormDiv">
+          <form>
+            <input class="form-control" name="account" [(ngModel)]="userModel.account" placeholder="请输入手机号、邮箱">
+            <input class="form-control" name="account" [(ngModel)]="userModel.password" placeholder="请输入密码">
+          </form>
+        </div>
+
       </div>
     </div>
   </div>
