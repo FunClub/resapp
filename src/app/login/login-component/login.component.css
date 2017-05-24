@@ -1,5 +1,21 @@
 #header{
-  border: solid;
   width: 1000px;
   height: 55px;
+  margin: auto;
+}
+#logo{
+  float: left;
+}
+#loginNowText{
+  display: inline-block;
+  height: 50px;
+  border-left: solid 1px rgb(213,213,213);
+  margin-left: 20px;
+  font-size: 23px;
+  line-height: 50px;
+  padding-left: 20px;
+}
+#helpDiv{
+  float: right;
+  margin-top: 20px;
 }
