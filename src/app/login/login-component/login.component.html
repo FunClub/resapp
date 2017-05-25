@@ -2,26 +2,81 @@
   <div id="header">
     <img id="logo" src="../../../assets/img/logo.jpg"/><span id="loginNowText">欢迎登录</span>
     <div id="helpDiv">
-      <img src="../../../assets/img/useModel.png" height="16" width="16"/><a href="#">帮助</a><a href="#">注册</a>
+      <img src="../../../assets/img/useModel.png" height="16" width="16"/><a href="#">帮助</a><a href="#" (click)="lgModal.show()">注册</a>
     </div>
   </div>
-  <div id="allContent">
-    <div id="content">
-      <img id="contentImg" src="../../../assets/img/login-center.png"/>
-      <div id="loginDiv">
-        <div id="loginTitle">
-          会员登录
-        </div>
-        <div id="loginFormDiv">
-          <form>
-            <input class="form-control" name="account" [(ngModel)]="userModel.account" placeholder="请输入手机号、邮箱">
-            <input class="form-control" name="account" [(ngModel)]="userModel.password" placeholder="请输入密码">
-            <p-checkbox ></p-checkbox>
-            <input class="btn btn-primary" value="登录" type="submit">
-          </form>
-        </div>
 
+</div>
+
+
+<div id="allContent">
+  <div id="content">
+    <img id="contentImg" src="../../../assets/img/login-center.png"/>
+    <div id="loginDiv">
+      <div id="loginTitle">
+        会员登录
+      </div>
+      <p *ngIf="loginForm.submitted" id="loginInfo" class="alert alert-danger">{{loginInfo}}</p>
+      <div id="loginFormDiv">
+        <form #loginForm="ngForm">
+          <input class="form-control" name="account" [(ngModel)]="loginModel.account" placeholder="请输入手机号、邮箱">
+          <input class="form-control" name="account" [(ngModel)]="loginModel.password" placeholder="请输入密码">
+          <p-checkbox name="remember" [(ngModel)]="remember" binary="true"></p-checkbox>
+          <span id="rememberText">记住账号密码？</span> <a id="losePass">忘记密码？</a>
+          <input id="loginBtn" class="btn btn-primary btn-block" value="登录" type="submit">
+        </form>
+        <img id="otherLogin" src="../../../assets/img/otherLogin.png" height="47" width="218"/>
       </div>
     </div>
   </div>
 </div>
+<!--注册开始-->
+<div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">会员注册</h4>
+        <button type="button" class="close pull-right" (click)="lgModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="registerForm" #registerForm="ngForm">
+          <div>
+            <label for="type">我是：</label>
+            <p-dropdown required id="type" name="type" [options]="types" [(ngModel)]="registerModel.type" [style]="{'width':'300px'}"></p-dropdown>
+          </div>
+          <div>
+            <label for="registerAccount">账号：</label>
+            <input id="registerAccount" required name="account"  pattern="[a-zA-Z]\w{5,13}" [(ngModel)]="registerModel.account" placeholder="请输入6-14位字母开头的账号" class="form-control">
+          </div>
+          <div>
+            <label for="registerPassword">密码：</label>
+            <input id="registerPassword" required name="password" type="password" pattern="\w{6,9}"
+                   [(ngModel)]="registerModel.password" placeholder="请输入6-9位密码" class="form-control">
+          </div>
+          <div>
+            <label for="nickName">昵称：</label>
+            <input id="nickName" name="nickName" class="form-control" [(ngModel)]="registerModel.name" placeholder="请输入昵称" maxlength="10">
+          </div>
+          <div *ngIf="registerModel.type!=undefined&&registerModel.type.type==2">
+            <label for="shopName">店名：</label>
+            <input id="shopName" name="shopName" maxlength="10" [(ngModel)]="registerModel.shopName" class="form-control">
+          </div>
+          <div>
+            <label for="shopName">验证：</label>
+            <input id="identify" (blur)="identifyCode()"  name="shopName" [(ngModel)]="registerModel.identifyCode"   class="form-control"><img id="identifyImg" [src]="identifyCodeUrl">
+            {{isIdentify}}
+            <a (click)="changeIdentifyCode()" href="#">看不清？</a>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <input type="submit" [disabled]="!registerForm.valid" class="btn-primary btn" value="注册">
+        <input type="submit" class="btn-default btn" value="重置">
+      </div>
+    </div>
+  </div>
+</div>
+<!--注册结束-->
+<app-footer></app-footer>
