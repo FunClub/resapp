@@ -16,7 +16,7 @@
       <div id="loginTitle">
         会员登录
       </div>
-      <p *ngIf="loginForm.submitted&&!loginResult" id="loginInfo" class="alert alert-danger">{{loginInfo}}</p>
+      <p *ngIf="loginForm.submitted&&loginResult!=undefined&&!loginResult" id="loginInfo" class="alert alert-danger">{{loginInfo}}</p>
       <div id="loginFormDiv">
         <form #loginForm="ngForm" (ngSubmit)="doLogin()">
           <input class="form-control" name="account" [(ngModel)]="loginModel.account" placeholder="请输入手机号、邮箱">

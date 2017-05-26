@@ -7,6 +7,8 @@ import {LoginModule} from './login/login.module';
 import {RouterModule} from '@angular/router';
 import {rootRouterConfig} from 'app/app.routes';
 import {HomeModule} from './home/home.module';
+import {UserService} from './login/user.service';
+import {LoginGuard} from './home/home-guard/login.guard';
 
 
 @NgModule({
@@ -17,11 +19,11 @@ import {HomeModule} from './home/home.module';
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(rootRouterConfig),
+    RouterModule.forRoot(rootRouterConfig,{useHash:true}),
     LoginModule,
     HomeModule
   ],
-  providers: [],
+  providers: [UserService,LoginGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

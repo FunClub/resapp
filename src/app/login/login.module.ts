@@ -28,6 +28,6 @@ import {LoginModel} from './login-model/login.model';
     PopoverModule.forRoot()
   ],
   declarations: [LoginComponent],
-  providers:[UserService,CustomerModel,SellerModel,ShopModel,LoginModel]
+  providers:[CustomerModel,SellerModel,ShopModel,LoginModel]
 })
 export class LoginModule { }

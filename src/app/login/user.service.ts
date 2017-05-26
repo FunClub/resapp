@@ -11,6 +11,11 @@ import {LoginModel} from './login-model/login.model';
 export class UserService {
   constructor(private http:Http,private customerModel:CustomerModel,private sellerModel:SellerModel
   ) { }
+
+  /*判断是否登录*/
+  isLogin():Observable<boolean>{
+    return this.http.get("isLogin").map(res=>res.json());
+  }
   /*登录*/
   doLogin(loginModel:LoginModel):Observable<boolean>{
     return this.http.post("login",loginModel).map(res=>res.json(),error=>error.statusText);

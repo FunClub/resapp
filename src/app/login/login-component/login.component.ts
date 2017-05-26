@@ -4,6 +4,8 @@ import {LoginModel} from 'app/login/login-model/login.model';
 import {RegisterModel} from '../login-model/register.model';
 import {UserService} from '../user.service';
 import {FormControl, FormGroup} from '@angular/forms';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -21,25 +23,30 @@ export class LoginComponent implements OnInit {
   registerResult:boolean;
   registerResultText:string;
   loginResult:boolean;
-  constructor( public loginModel:LoginModel,public registerModel:RegisterModel,
+  constructor( public loginModel:LoginModel,public registerModel:RegisterModel,private router:Router,
   private userService:UserService
   ) {
     this.types = [];
     this.types.push({label:'选择一个身份', value:null});
     this.types.push({label:'顾客', value:{type:1}});
     this.types.push({label:'商家', value:{type:2}});
-    this.identifyCodeUrl="/getIdentifyCode";
+    this.identifyCodeUrl='/getIdentifyCode';
   }
   doLogin(){
-    this.userService.doLogin(this.loginModel).subscribe(res=>this.loginResult=res,error=>{console.log(error)})
+    this.userService.doLogin(this.loginModel).subscribe(res=>{
+      this.loginResult=res;
+      if(this.loginResult){
+        this.router.navigateByUrl("/home");
+      }
+    },error=>{console.log(error)})
   }
   doRegister(registerForm){
     this.userService.doRegister(this.registerModel).subscribe(res=>{
       this.registerResult=res;
       if(this.registerResult){
-        this.registerResultText="注册成功";
+        this.registerResultText='注册成功';
       }else{
-        this.registerResultText="注册失败";
+        this.registerResultText='注册失败';
       }
     },error=>console.log(error));
   }
@@ -60,7 +67,7 @@ export class LoginComponent implements OnInit {
   /*更换验证码
   * */
   changeIdentifyCode(){
-    this.identifyCodeUrl="/getIdentifyCode?"+Math.random();
+    this.identifyCodeUrl='/getIdentifyCode?'+Math.random();
   }
   ngOnInit() {
 
