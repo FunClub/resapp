@@ -104,14 +104,14 @@
   color: red;
 }
 #registerForm .form-control:not(#identify){
-  width: 300px;
+  width: 400px;
   display: inline-block;
   height: 30px;
 }
 #identify{
   display: inline-block;
   height: 30px;
-  width: 100px;
+  width: 150px;
 }
 #identifyImg{
   margin-left: 15px;
@@ -120,5 +120,15 @@
 #registerForm{
   width: 500px;
   margin: auto;
-
+}
+#accountIdentifyText{
+  height: 35px;
+  line-height: 5px;
+  width: 400px;
+  margin-left: 45px;
+  margin-top: 5px;
+  margin-bottom: -10px;
+}
+#registerResultText{
+  text-align: center;
 }

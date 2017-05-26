@@ -6,17 +6,20 @@ import { AppComponent } from './app.component';
 import {LoginModule} from './login/login.module';
 import {RouterModule} from '@angular/router';
 import {rootRouterConfig} from 'app/app.routes';
+import {HomeModule} from './home/home.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(rootRouterConfig),
-    LoginModule
+    LoginModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

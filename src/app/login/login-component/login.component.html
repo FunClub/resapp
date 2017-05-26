@@ -16,14 +16,14 @@
       <div id="loginTitle">
         会员登录
       </div>
-      <p *ngIf="loginForm.submitted" id="loginInfo" class="alert alert-danger">{{loginInfo}}</p>
+      <p *ngIf="loginForm.submitted&&!loginResult" id="loginInfo" class="alert alert-danger">{{loginInfo}}</p>
       <div id="loginFormDiv">
-        <form #loginForm="ngForm">
+        <form #loginForm="ngForm" (ngSubmit)="doLogin()">
           <input class="form-control" name="account" [(ngModel)]="loginModel.account" placeholder="请输入手机号、邮箱">
-          <input class="form-control" name="account" [(ngModel)]="loginModel.password" placeholder="请输入密码">
+          <input class="form-control" type="password" name="account" [(ngModel)]="loginModel.password" placeholder="请输入密码">
           <p-checkbox name="remember" [(ngModel)]="remember" binary="true"></p-checkbox>
           <span id="rememberText">记住账号密码？</span> <a id="losePass">忘记密码？</a>
-          <input id="loginBtn" class="btn btn-primary btn-block" value="登录" type="submit">
+          <input id="loginBtn" class="btn btn-primary btn-block" value="登录" type="submit" >
         </form>
         <img id="otherLogin" src="../../../assets/img/otherLogin.png" height="47" width="218"/>
       </div>
@@ -41,14 +41,15 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="registerForm" #registerForm="ngForm">
+        <form id="registerForm" #registerForm="ngForm" (ngSubmit)="doRegister()">
           <div>
             <label for="type">我是：</label>
-            <p-dropdown required id="type" name="type" [options]="types" [(ngModel)]="registerModel.type" [style]="{'width':'300px'}"></p-dropdown>
+            <p-dropdown required id="type" name="type" [options]="types" [(ngModel)]="registerModel.type" [style]="{'width':'400px'}"></p-dropdown>
           </div>
           <div>
             <label for="registerAccount">账号：</label>
-            <input id="registerAccount" required name="account"  pattern="[a-zA-Z]\w{5,13}" [(ngModel)]="registerModel.account" placeholder="请输入6-14位字母开头的账号" class="form-control">
+            <input #registerAccount="ngModel" placement="right"   id="registerAccount" (blur)="identifyAccount(registerAccount)" required name="account"  pattern="[a-zA-Z]\w{5,13}" [(ngModel)]="registerModel.account" placeholder="请输入6-14位字母开头的账号" class="form-control">
+           <p *ngIf="trueAccount" id="accountIdentifyText" class="alert alert-danger">账号已被注册</p>
           </div>
           <div>
             <label for="registerPassword">密码：</label>
@@ -61,19 +62,19 @@
           </div>
           <div *ngIf="registerModel.type!=undefined&&registerModel.type.type==2">
             <label for="shopName">店名：</label>
-            <input id="shopName" name="shopName" maxlength="10" [(ngModel)]="registerModel.shopName" class="form-control">
+            <input id="shopName" name="shopName" maxlength="10" [(ngModel)]="registerModel.shopName" class="form-control" placeholder="请输入店铺名称">
           </div>
           <div>
             <label for="shopName">验证：</label>
-            <input id="identify" (blur)="identifyCode()"  name="shopName" [(ngModel)]="registerModel.identifyCode"   class="form-control"><img id="identifyImg" [src]="identifyCodeUrl">
-            {{isIdentify}}
-            <a (click)="changeIdentifyCode()" href="#">看不清？</a>
+            <input id="identify" maxlength="4" (keyup)="identifyCode()"  name="shopName" [(ngModel)]="registerModel.identifyCode"   class="form-control"><img id="identifyImg" [src]="identifyCodeUrl">
+            <a (click)="changeIdentifyCode()" href="#">看不清？换一张！</a>
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <input type="submit" [disabled]="!registerForm.valid" class="btn-primary btn" value="注册">
-        <input type="submit" class="btn-default btn" value="重置">
+        <p *ngIf="registerResult" id="registerResultText" class="alert alert-danger">{{registerResultText}}</p>
+        <input type="submit" form="registerForm" [disabled]="!registerAble(registerForm)" class="btn-primary btn" value="注册">
+        <input type="reset" form="registerForm" class="btn-default btn" value="重置">
       </div>
     </div>
   </div>

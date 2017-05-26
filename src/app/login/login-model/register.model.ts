@@ -4,7 +4,7 @@
 export class RegisterModel{
   account:string;
   password:string;
-  type:string;
+  type:any;
   name:string;
   shopName:string;
   identifyCode:string;
