@@ -1,0 +1,20 @@
+.navImg{
+  width: 25px;
+  margin-right: 20px;
+}
+.navPointer{
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 60px;
+  width: 13px;
+}
+.activatedNavText{
+  color: rgb(139,195,74);
+  font-weight: bold;
+}
+.activatedNavBackGround{
+  background: rgb(232,232,232);
+}
+#item{
+  padding-left: 20px;
+}

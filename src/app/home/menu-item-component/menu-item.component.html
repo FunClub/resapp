@@ -1,0 +1,5 @@
+<div id="item"[ngClass]="{'activatedNavBackGround':item.activated}" (click)="doNav()">
+  <img class="navImg" [src]="getImg()"/>
+  <span [ngClass]="{'activatedNavText':item.activated}">{{item.text}}</span>
+  <img [src]="getPointer()" class="navPointer">
+</div>

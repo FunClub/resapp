@@ -1,0 +1,46 @@
+
+.preGoods{
+  width: 65%;
+  float: left;
+  box-shadow: 0 0 10px rgb(180,180,180);
+}
+.preGoodsImgDiv{
+  width: 80%;
+}
+#preAddGoods{
+  width: 35%;
+  float: right;
+}
+.addGoodsTitle{
+  margin-left: 10px;
+}
+#addGoodsHeader{
+  margin-top: 20px;
+  margin-left: 10px;
+}
+#pre-inputSwitch{
+  float: right;
+  margin-right: 30px;
+}
+#addGoodsHeader span{
+  font-size: 23px;
+}
+#addGoodsLogo{
+  width: 150px;
+}
+
+#addGoodsDiv{
+  margin: auto;
+
+}
+#addGoodsForm{
+  width: 90%;
+  margin: auto;
+}
+.goodEachInfo{
+  margin-top: 15px;
+}
+#preGoodsText{
+  margin-left: 10px;
+  margin-top: 20px;
+}
