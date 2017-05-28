@@ -5,7 +5,8 @@ export class AddGoodsModel{
   goodsName:string;
   goodsPrice:string;
   goodsDescription:string;
-  goodsType:string;
+  goodsType:any;
   salesVolume:number;
-  rebate:number;
+  rebate:any;
+  goodsImg:string[]
 }
