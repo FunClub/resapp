@@ -19,15 +19,15 @@
         <img src="../../../assets/img/1E0EF200099D6D6C.jpg"/>
         <p id="nickName">上官青青</p>
       </div>
-      <ul>
-        <li>销售总览</li>
-        <li>销售总览</li>
-        <li>销售总览</li>
-        <li>销售总览</li>
+      <ul id="menuUl">
+        <li *ngFor="let item of items;">
+          <app-menu-item [item]="item"  (eNav)="nav($event)"></app-menu-item>
+        </li>
+
       </ul>
     </div>
     <!--导航菜单结束-->
     <div id="allContent">
-      11111111111<br>1111111111111111111111111111<br>111111111111<br>11111111111111<br>111111111111111<br>
+      <router-outlet></router-outlet>
     </div>
 </div>

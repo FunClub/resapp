@@ -9,11 +9,14 @@ import {rootRouterConfig} from 'app/app.routes';
 import {HomeModule} from './home/home.module';
 import {UserService} from './login/user.service';
 import {LoginGuard} from './home/home-guard/login.guard';
+import {AddGoodsModule} from './add-goods/add-goods.module';
+import {SalesInfoModule} from './sales-info/sales-info.module';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,9 @@ import {LoginGuard} from './home/home-guard/login.guard';
     HttpModule,
     RouterModule.forRoot(rootRouterConfig,{useHash:true}),
     LoginModule,
-    HomeModule
+    HomeModule,
+    AddGoodsModule,
+    SalesInfoModule
   ],
   providers: [UserService,LoginGuard],
   bootstrap: [AppComponent]

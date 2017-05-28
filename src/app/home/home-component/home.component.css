@@ -22,7 +22,7 @@
   margin-right: 10px;
 }
 #headerRight{
-  height: 65px;
+  height: 60px;
   float: right;
   width: 600px;
 }
@@ -73,7 +73,7 @@ input::-webkit-input-placeholder {
   position: fixed;
 }
 #allContent{
-  height: 1000px;
+  padding-bottom: 30px;
   width: 100%;
   top: 60px;
   z-index: -201;
@@ -82,7 +82,7 @@ input::-webkit-input-placeholder {
   background: white;
 }
 #userInfo{
-  height: 135px;
+  height: 120px;
   box-shadow: 0 0 3px gray;
   background-image: url("../../../assets/img/infoBg.jpg");
   text-align: center;
@@ -90,9 +90,22 @@ input::-webkit-input-placeholder {
 #userInfo img{
   width: 64px;
   border-radius: 32px;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 #nickName{
   margin-top: 10px;
   font-weight: bold;
 }
+#menuUl{
+  margin-top: 20px;
+}
+#menuUl li{
+  font-size: 15px;
+  cursor: pointer;
+  height: 40px;
+  line-height: 40px;
+}
+#menuUl li:hover{
+  background: rgb(232,232,232);
+}
+

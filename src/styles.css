@@ -1,8 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
-@import "~primeng/resources/primeng.min.css";
-@import "~primeng/resources/themes/omega/theme.css";
-@import "~font-awesome/css/font-awesome.min.css";
+@import "~primeng/resources/primeng.min.css"; @import "~primeng/resources/themes/omega/theme.css"; @import "~font-awesome/css/font-awesome.min.css";
+@import "~quill/dist/quill.core.css";@import "~quill/dist/quill.snow.css";
 *{
   margin: 0;
   padding: 0;
