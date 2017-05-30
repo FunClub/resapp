@@ -1,0 +1,114 @@
+#allHeader{
+  height: 60px;
+  background: rgb(30,137,224);
+  line-height: 60px;
+  box-shadow: 0 1px 5px rgb(0,107,199);
+}
+#header{
+  color: white;
+  width: 1000px;
+  margin: auto;
+}
+
+#navDiv{
+  display: inline-block;
+  width: 500px;
+  margin-left: 20px;
+}
+.eachNav{
+  cursor: pointer;
+  margin-left: 20px;
+  font-size: 18px;
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+}
+#otherNav{
+  float: right;
+  width: 300px;
+}
+.otherEachNav{
+  cursor: pointer;
+  font-size: 15px;
+  display: inline-block;
+  width: 80px;
+
+  text-align: center;
+}
+.navActivated{
+  background: rgb(0,107,199);
+}
+#allShopType{
+  width: 1000px;
+  height: 100px;
+  box-shadow: 0 0 5px rgb(180,180,180);
+  margin: auto;
+  margin-top: 20px;
+  position: relative;
+
+}
+#shopTypeText{
+  color: rgb(120,120,120);
+  display: inline-block;
+  margin: 10px;
+  float: left;
+}
+#allType{
+  display: inline-block;
+  height: 140px;
+  font-size: 15px;
+  width: 750px;
+  margin-top: 10px;
+}
+.eachShop{
+  display: inline-block;
+}
+#indexLogo{
+  position: absolute;
+  float: right;
+  top: 0;
+  left: 835px; ;
+}
+#allShop{
+  width: 1000px;
+  height: 400px;
+  box-shadow: 0 0 5px rgb(180,180,180);
+  margin: auto;
+  margin-top: 20px;
+}
+.eachShop{
+  width: 270px;
+  height: 120px;
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+.eachShop:hover{
+  box-shadow: 0 0 3px rgb(180,180,180);
+}
+.shopLetf{
+  float: left;
+}
+.shopRight{
+
+}
+.shopImg{
+  display: inline-block;
+  margin-right: 10px;
+}
+.shopAddress{
+  margin-left: 5px;
+  margin-top: 7px;
+  color: rgb(120,120,120);
+}
+.shopName{
+  font-weight: bold;
+  font-size: 16px;
+}
+.shopSales{
+  color:rgb(120,120,120);
+}
+.startSales{
+  color:rgb(120,120,120);
+  margin-left: 10px;
+}
