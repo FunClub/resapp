@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {AddGoodsModel} from '../add-goods-model/add.goods.model';
+import {UserService} from '../../login/user.service';
+import {AddGoodsService} from '../add-goods.service';
+import {Message} from 'primeng/primeng';
 
 @Component({
   selector: 'app-add-goods',
@@ -39,6 +42,7 @@ export class AddGoodsComponent implements OnInit {
 ];
   goodsRebate=[
     {label:'请选择商品的折扣', value:null},
+    {label:'原价', value:{rebate:1,label:'原价'}},
     {label:'9折', value:{rebate:0.9,label:'9折'}},
     {label:'8折', value:{rebate:0.8,label:'8折'}},
     {label:'7折', value:{rebate:0.7,label:'7折'}},
@@ -50,13 +54,41 @@ export class AddGoodsComponent implements OnInit {
     {label:'1折', value:{rebate:0.1,label:'1折'}},
   ];
   goodsFiles:any[]=[];
-  constructor(public addGoodsModel:AddGoodsModel) {
-  this.addGoodsModel.goodsImg=[];
+  goodsImgUrl:string[]=[];
+  addGoodsMessage:Message[];
+  user:any;
+  showMessage(){
+
+  }
+  constructor(public addGoodsModel:AddGoodsModel,public userService:UserService,public addGoodsService:AddGoodsService) {
+    this.addGoodsModel.goodsImg=[];
   }
 
   ngOnInit() {
+    this.userService.getUser().subscribe(res=>this.user=res);
   }
-  doUploadGoodsImg(event){
+
+  /*
+  * 添加商品
+  * */
+  doAddGoods(){
+    this.addGoodsModel.shopId=this.user.shopId;
+    this.addGoodsModel.goodsType=this.addGoodsModel.goodsType.type;
+    this.addGoodsModel.rebate=this.addGoodsModel.rebate.rebate;
+    this.addGoodsService.addGoods(this.addGoodsModel).subscribe(res=>{
+      this.addGoodsMessage=[];
+      if(res){
+        this.addGoodsMessage.push({severity:'success',summary:'添加商品成功',detail:this.addGoodsModel.goodsName});
+      }else{
+        this.addGoodsMessage.push({severity:'error',summary:'添加商品失败',detail:this.addGoodsModel.goodsName});
+      }
+    });
+  }
+
+  /*
+  * 选择图片
+  * */
+  doSelectedGoodsImgs(event){
     for(let file of event.files) {
       this.goodsFiles.push(file);
     }
@@ -64,8 +96,14 @@ export class AddGoodsComponent implements OnInit {
       let r = new FileReader();
       r.readAsDataURL(file);
       r.onload=()=>{
-        this.addGoodsModel.goodsImg.push( r.result);
+        this.goodsImgUrl.push( r.result);
       }
     }
+  }
+  /*
+  * 上传图片成功后的回调函数
+  * */
+  doUploadGoodsImg(event){
+    this.addGoodsModel.goodsImg=JSON.parse(event.xhr.responseText);
   }
 }

@@ -17,7 +17,7 @@
     <div id="allMenuDiv">
       <div id="userInfo">
         <img src="../../../assets/img/1E0EF200099D6D6C.jpg"/>
-        <p id="nickName">上官青青</p>
+        <p id="nickName">{{user?user.sellerName:none}}</p>
       </div>
       <ul id="menuUl">
         <li *ngFor="let item of items;">

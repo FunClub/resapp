@@ -11,12 +11,12 @@ import {UserService} from './login/user.service';
 import {LoginGuard} from './home/home-guard/login.guard';
 import {AddGoodsModule} from './add-goods/add-goods.module';
 import {SalesInfoModule} from './sales-info/sales-info.module';
-
-
+import {ShopModule} from './shop/shop.module';
+import {UpdateSellerModule} from './update-seller/update-seller.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +26,9 @@ import {SalesInfoModule} from './sales-info/sales-info.module';
     LoginModule,
     HomeModule,
     AddGoodsModule,
-    SalesInfoModule
+    SalesInfoModule,
+    ShopModule,
+    UpdateSellerModule
   ],
   providers: [UserService,LoginGuard],
   bootstrap: [AppComponent]

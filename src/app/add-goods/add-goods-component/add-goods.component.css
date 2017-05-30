@@ -1,11 +1,23 @@
-
+#allAddGoods{
+  position: relative;
+}
 .preGoods{
   width: 65%;
   float: left;
   box-shadow: 0 0 10px rgb(180,180,180);
+  position: absolute;
 }
-.preGoodsImgDiv{
-  width: 80%;
+#preGoodsText{
+ text-align: center;
+}
+#preGoodsImgDiv{
+  width: 360px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+#preGoodsImgDiv img{
+  width: 360px;
+  box-shadow: 0 0 5px gray;
 }
 #preAddGoods{
   width: 35%;

@@ -3,6 +3,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 import {MenuItemModel} from '../home-model/menu.item.model';
 import {MenuItemComponent} from '../menu-item-component/menu-item.component';
 import {Router} from '@angular/router';
+import {UserService} from '../../login/user.service';
 
 
 @Component({
@@ -30,7 +31,13 @@ import {Router} from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   items:Array<MenuItemModel>=[];
-  constructor(private router:Router) {
+  user:any;
+  constructor(private router:Router,public userService:UserService) {
+    this.items.push(new MenuItemModel("../../../assets/img/rank","销售总览",true,0,"home/salesInfo"));
+    this.items.push(new MenuItemModel("../../../assets/img/addGoods","推出菜品",false,1,"home/addGoods"));
+    this.items.push(new MenuItemModel("../../../assets/img/orderManager","订单管理",false,2,"orderManage"));
+    this.items.push(new MenuItemModel("../../../assets/img/goodsManger","菜品管理",false,3,"goodsManage"));
+    this.items.push(new MenuItemModel("../../../assets/img/updateInfo","资料修改",false,4,"home/update"));
   }
 
   /*导航*/
@@ -44,11 +51,7 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl(this.items[index].nav);
   }
   ngOnInit() {
-    this.items.push(new MenuItemModel("../../../assets/img/rank","销售总览",true,0,"home/salesInfo"));
-    this.items.push(new MenuItemModel("../../../assets/img/addGoods","推出菜品",false,1,"home/addGoods"));
-    this.items.push(new MenuItemModel("../../../assets/img/orderManager","订单管理",false,2,"orderManage"));
-    this.items.push(new MenuItemModel("../../../assets/img/goodsManger","菜品管理",false,3,"goodsManage"));
-    this.items.push(new MenuItemModel("../../../assets/img/updateInfo","资料修改",false,4,"updateInfo"));
+  this.userService.getUser().subscribe(res=>this.user=res);
   }
 
 }

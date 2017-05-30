@@ -33,12 +33,14 @@ export class LoginComponent implements OnInit {
     this.identifyCodeUrl='/getIdentifyCode';
   }
   doLogin(){
-    this.userService.doLogin(this.loginModel).subscribe(res=>{
-      this.loginResult=res;
-      if(this.loginResult){
-        this.router.navigateByUrl("/home");
-      }
-    },error=>{console.log(error)})
+    this.userService.doLogin(this.loginModel).subscribe((user):any =>{
+        if(user.shopId){
+          this.router.navigateByUrl("/home");
+        }else{
+          this.router.navigateByUrl("/index");
+        }
+
+    },error=>{this.loginResult=false;})
   }
   doRegister(registerForm){
     this.userService.doRegister(this.registerModel).subscribe(res=>{
