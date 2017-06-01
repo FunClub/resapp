@@ -4,8 +4,6 @@ import {MenuItemModel} from '../home-model/menu.item.model';
 import {MenuItemComponent} from '../menu-item-component/menu-item.component';
 import {Router} from '@angular/router';
 import {UserService} from '../../login/user.service';
-
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -51,7 +49,9 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl(this.items[index].nav);
   }
   ngOnInit() {
-  this.userService.getUser().subscribe(res=>this.user=res);
+  this.userService.getUser().subscribe(res=>{
+    this.user=res;
+  });
   }
 
 }

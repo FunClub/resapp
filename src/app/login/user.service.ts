@@ -19,8 +19,8 @@ export class UserService {
     return this.http.get("isLogin").map(res=>res.json());
   }
   /*登录*/
-  doLogin(loginModel:LoginModel):Observable<any>{
-    return this.http.post("login",loginModel).map(res=>res.json());
+  doLogin(loginModel:LoginModel):Observable<string>{
+    return this.http.post("login",loginModel).map(res=>res.text());
   }
   /*账号注册*/
   doRegister(registerModel:RegisterModel):Observable<boolean>{

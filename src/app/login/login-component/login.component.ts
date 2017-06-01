@@ -34,9 +34,9 @@ export class LoginComponent implements OnInit {
   }
   doLogin(){
     this.userService.doLogin(this.loginModel).subscribe((user):any =>{
-        if(user.shopId){
+        if(user==="seller"){
           this.router.navigateByUrl("/home");
-        }else{
+        }else if(user=="customer"){
           this.router.navigateByUrl("/index");
         }
 
