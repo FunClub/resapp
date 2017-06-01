@@ -3,4 +3,8 @@
  */
 export class ShopModel{
   shopName:string;
+  shopImg:string;
+  leastPrice:string;
+  shopNotice:string;
+  shopType:string;
 }

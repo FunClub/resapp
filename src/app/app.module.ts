@@ -13,6 +13,7 @@ import {AddGoodsModule} from './add-goods/add-goods.module';
 import {SalesInfoModule} from './sales-info/sales-info.module';
 import {ShopModule} from './shop/shop.module';
 import {UpdateSellerModule} from './update-seller/update-seller.module';
+import {UpdateSellerService} from './update-seller/update-seller.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import {UpdateSellerModule} from './update-seller/update-seller.module';
     ShopModule,
     UpdateSellerModule
   ],
-  providers: [UserService,LoginGuard],
+  providers: [UserService,LoginGuard,UpdateSellerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

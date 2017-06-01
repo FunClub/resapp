@@ -16,14 +16,13 @@
     <!--导航菜单开始-->
     <div id="allMenuDiv">
       <div id="userInfo">
-        <img src="../../../assets/img/1E0EF200099D6D6C.jpg"/>
-        <p id="nickName">{{user?user.sellerName:none}}</p>
+        <img class="shopImg" [src]="user?user.shop.shopImg:'upload/userImg.png'">
+        <p id="nickName">{{user?user.seller.sellerName:none}}</p>
       </div>
       <ul id="menuUl">
         <li *ngFor="let item of items;">
           <app-menu-item [item]="item"  (eNav)="nav($event)"></app-menu-item>
         </li>
-
       </ul>
     </div>
     <!--导航菜单结束-->
