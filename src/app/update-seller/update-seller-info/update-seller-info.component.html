@@ -14,6 +14,24 @@
       <input type="text" required name="shopName" [(ngModel)]="sellerAndShopModel.shopName" id="shopName" class="form-control">
     </div>
     <div class="eachInfo">
+      <label for="sellerTelephone">商家手机</label>
+      <input type="text" required name="sellerTelephone" [(ngModel)]="sellerAndShopModel.sellerTelephone" id="sellerTelephone" class="form-control">
+    </div>
+    <div class="eachInfo">
+      <label for="sellerAddress">商家地址</label>
+      <input type="text" required name="sellerAddress" [(ngModel)]="sellerAndShopModel.sellerAddress" id="sellerAddress" class="form-control">
+    </div>
+    <div class="eachInfo">
+      <label for="shopName">起送价钱</label>
+      <input type="text" required name="leastPrice" [(ngModel)]="sellerAndShopModel.leastPrice" id="leastPrice" class="form-control">
+    </div>
+
+    <div class="eachInfo">
+      <label>店铺类型</label>
+      <p-dropdown  [options]="shopTypes" name="shopType" [(ngModel)]="sellerAndShopModel.shopType" [style]="{'line-height':'26px','width':'100%','height':'35px','display':'block'}"></p-dropdown>
+    </div>
+
+    <div class="eachInfo">
       <label>店铺照片</label>
       <p-fileUpload (onUpload)="doUploadShopImg($event)" chooseLabel="选择图片"  uploadLabel="确认上传" cancelLabel="取消上传"  id="" name="files"  url="/uploadGoodsImg"></p-fileUpload>
     </div>

@@ -40,14 +40,13 @@
 #addGoodsLogo{
   width: 150px;
 }
-
 #addGoodsDiv{
   margin: auto;
-
 }
 #addGoodsForm{
-  width: 90%;
+  width: 93%;
   margin: auto;
+  padding-bottom: 20px;
 }
 .goodEachInfo{
   margin-top: 15px;
