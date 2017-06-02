@@ -11,7 +11,7 @@ export class SellerAndShopModel{
   shopName:string;
   shopImg:string;
   leastPrice:string;
-  shopType:string;
+  shopType:any;
   shopNotice:string;
 }
 /*

@@ -11,7 +11,7 @@ import {UserService} from './login/user.service';
 import {LoginGuard} from './home/home-guard/login.guard';
 import {AddGoodsModule} from './add-goods/add-goods.module';
 import {SalesInfoModule} from './sales-info/sales-info.module';
-import {ShopModule} from './shop/shop.module';
+import {IndexModule} from './index/index.module';
 import {UpdateSellerModule} from './update-seller/update-seller.module';
 import {UpdateSellerService} from './update-seller/update-seller.service';
 
@@ -28,7 +28,7 @@ import {UpdateSellerService} from './update-seller/update-seller.service';
     HomeModule,
     AddGoodsModule,
     SalesInfoModule,
-    ShopModule,
+    IndexModule,
     UpdateSellerModule
   ],
   providers: [UserService,LoginGuard,UpdateSellerService],

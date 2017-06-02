@@ -1,5 +1,6 @@
 <div id="allUpdate" [@flyInOut]="inactive">
   <h3>修改资料</h3>
+  <p-growl [(value)]="updateMessage" [style]="{'left':'450px','top':'80px','position':'fixed'}"></p-growl>
   <form #updateForm="ngForm" (ngSubmit)="doUpdateInfo()">
     <div class="eachInfo">
       <label for="nickName">昵称</label>

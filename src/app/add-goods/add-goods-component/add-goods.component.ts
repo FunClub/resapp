@@ -72,7 +72,7 @@ export class AddGoodsComponent implements OnInit {
   * 添加商品
   * */
   doAddGoods(){
-    this.addGoodsModel.shopId=this.user.shopId;
+    this.addGoodsModel.shopId=this.user.shop.shopId;
     this.addGoodsModel.goodsType=this.addGoodsModel.goodsType.type;
     this.addGoodsModel.rebate=this.addGoodsModel.rebate.rebate;
     this.addGoodsService.addGoods(this.addGoodsModel).subscribe(res=>{

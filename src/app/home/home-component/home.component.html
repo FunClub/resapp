@@ -17,7 +17,7 @@
     <div id="allMenuDiv">
       <div id="userInfo">
         <img class="shopImg" [src]="user?user.shop.shopImg:'upload/userImg.png'">
-        <p id="nickName">{{user?user.seller.sellerName:none}}</p>
+        <p id="nickName">{{user?user.shop.shopName:none}}</p>
       </div>
       <ul id="menuUl">
         <li *ngFor="let item of items;">
