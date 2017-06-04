@@ -1,0 +1,64 @@
+<div id="allDiv">
+  <div id="shopInfo">
+    <img id="shopImg" src="../../../assets/img/2017-06-01_124651.png" />
+    <div id="detailsInfo">
+      <div id="baseInfo">
+        <p id="shopName">乡村基(重庆巴南店)</p>
+        <p-rating id="star" [readonly]="true" [cancel]="false" ></p-rating><span id="sales">月售：320单</span>
+      </div>
+      <div id="otherInfo">
+        <div class="eachOtherInfo">
+          <p>起送价</p>
+          <span class="truthInfo">32元</span>
+        </div>
+        <div class="eachOtherInfo">
+          <p>配送费</p>
+          <span class="truthInfo">配送费32元</span>
+        </div>
+        <div class="eachOtherInfo">
+          <p>平均送达速度</p>
+          <span class="truthInfo">0分钟</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="left">
+      <div id="goodsTypes">
+        <p-selectButton  [(ngModel)]="goodsType" (onChange)="getIndexShop($event)" [options]="goodsTypes" name="selectedShopType" ></p-selectButton>
+      </div>
+    <div id="allGoods">
+      <div class="eachGoods">
+       <img class="goodsImg" src="../../../assets/img/2017-06-01_124651.png"/>
+        <div class="goodsInfo">
+          <p class="goodsName">黄焖鸡</p>
+          <p class="goodsDes">很好吃</p>
+          <span class="goodsSales">月售50单</span><span></span> <span class="goodsPrice">32元</span>
+
+        </div>
+      </div>
+      <div class="eachGoods">
+        <img class="goodsImg" src="../../../assets/img/2017-06-01_124651.png"/>
+        <div class="goodsInfo">
+          <p class="goodsName">黄焖鸡</p>
+          <p class="goodsDes">很好吃</p>
+          <span class="goodsSales">月售50单</span><span></span> <span class="goodsPrice">32元</span>
+        </div>
+      </div>
+
+      <div class="eachGoods">
+        <img class="goodsImg" src="../../../assets/img/2017-06-01_124651.png"/>
+        <div class="goodsInfo">
+          <p class="goodsName">黄焖鸡</p>
+          <p class="goodsDes">很好吃</p>
+          <span class="goodsSales">月售50单</span><span></span> <span class="goodsPrice">32元</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="right">
+    <p id="sclerotic">商家公告</p>
+    <div id="note">
+      温馨提示：亲们有特殊要求记得写备注哟！我们的订餐时间：9:00~20:00.且11：00以前只是预定单，配送时间是11:00正式开始，我们餐具是是配的勺子和纸巾，如果需要筷子麻烦写备注；还有我们外送的统一是配汤，如果需要换可乐也要麻烦亲们记得写备注哟，欢迎您的订购。
+    </div>
+  </div>
+</div>

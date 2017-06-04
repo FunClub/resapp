@@ -1,0 +1,117 @@
+#allDiv{
+  margin: auto;
+  width: 1110px;
+  margin-top:20px;
+  overflow: hidden;
+  padding: 3px;
+}
+#shopImg{
+  border-radius: 48px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+#shopInfo{
+  height: 130px;
+  box-shadow: 0 0 3px rgb(180,180,180);
+  width: 1100px;
+
+}
+#detailsInfo{
+  display: inline-block;
+  margin-top: 30px;
+  width: 700px;
+}
+#shopName{
+  font-size: 20px;
+  font-weight: bold;
+}
+#star{
+  display: inline-block;
+}
+#sales{
+  margin-left: 10px;
+}
+#baseInfo{
+  float: left;
+}
+#otherInfo{
+  float: right;
+}
+.eachOtherInfo{
+  display: inline-block;
+  margin-left:60px;
+}
+.truthInfo{
+  font-size: 16px;
+  font-weight: bold;
+}
+#goodsTypes{
+  margin-top: 20px;
+}
+#goodsTypeText{
+  color: gray;
+}
+#left{
+  float: left;
+  width: 796px;
+}
+#right{
+  float: right;
+  width: 280px;
+  margin-top: 20px;
+  box-shadow: 0 0 3px rgb(180,180,180);
+
+}
+#note{
+  padding: 10px;
+}
+#allGoods{
+  height: 300px;
+  box-shadow: 0 0 3px rgb(180,180,180);
+  padding: 10px;
+  padding-top: 20px;
+}
+#sclerotic{
+  background: rgb(30,137,224);
+  height: 30px;
+  padding-left: 20px;
+  font-size: 18px;
+  color: white;
+  line-height: 30px;
+}
+.eachGoods{
+  margin-left: 10px;
+  height: 100px;
+  width: 240px;
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px;
+}
+.eachGoods:hover{
+  box-shadow: 0 0 3px gray;
+}
+.goodsImg{
+  width: 70px;
+  float: left;
+  margin-right: 10px;
+}
+.goodsName{
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.goodsDes{
+  color: gray;
+  margin-bottom: 5px;
+}
+.goodsSales{
+  color: gray;
+}
+.goodsPrice{
+  color: gray;
+}
+.buyBtn{
+  margin-left: 10px;
+  display: block;
+}

@@ -1,0 +1,27 @@
+
+<div id="allShopType">
+
+  <div id="shopTypeText">
+    商家分类:
+  </div>
+  <div id="allType">
+    <p-selectButton (onChange)="getIndexShop($event)" [options]="shopTypes" name="selectedShopType" [(ngModel)]="selectedShopType"></p-selectButton>
+    <img id="indexLogo" src="../../../assets/img/indexLogo.png" height="50" width="203"/>
+  </div>
+  <p id="customerAddress">收货地址：{{customer?customer.customerAddress:none}}</p>
+</div>
+
+<div id="allShop">
+  <div class="eachShop" routerLink="sellerShop" *ngFor=" let shop of shops;trackBy:trackByShops">
+    <div class="shopLetf">
+      <img class="shopImg" [src]="shop.shopImg"/>
+    </div>
+    <div class="shopRight">
+      <p class="shopName">{{shop.shopName}}</p>
+      <p-rating [readonly]="true" [cancel]="false" [(ngModel)]="shop.star" [style]="{'background':'red'}"></p-rating>
+      <span class="shopSales">月售{{shop.sales}}单</span><span class="startSales">{{shop.leastPrice}}元起</span>
+      <p class="shopAddress">{{shop.sellerAddress}}</p>
+    </div>
+  </div>
+
+</div>

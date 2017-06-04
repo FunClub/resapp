@@ -1,0 +1,83 @@
+#allShopType{
+  width: 1100px;
+  height: 120px;
+  box-shadow: 0 0 5px rgb(180,180,180);
+  margin: auto;
+  margin-top: 20px;
+  position: relative;
+}
+#shopTypeText{
+  color: rgb(120,120,120);
+  display: inline-block;
+  margin: 10px;
+  float: left;
+}
+#allType{
+  display: inline-block;
+  font-size: 15px;
+  width: 750px;
+  margin-top: 10px;
+}
+#customerAddress{
+  margin-left: 10px;
+  padding-top: 10px;
+  margin-bottom: 0;
+  color: goldenrod;
+}
+
+#indexLogo{
+  position: absolute;
+  float: right;
+  top: 0;
+  left: 940px; ;
+}
+#allShop{
+  width: 1100px;
+  height: 400px;
+  box-shadow: 0 0 5px rgb(180,180,180);
+  margin: auto;
+  margin-top: 20px;
+
+}
+.eachShop{
+  display: inline-block;
+  width: 220px;
+  height: 120px;
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+.eachShop:hover{
+  box-shadow: 0 0 3px rgb(180,180,180);
+}
+.shopLetf{
+  float: left;
+}
+.shopRight{
+
+}
+.shopImg{
+  display: inline-block;
+  margin-right: 10px;
+  width: 90px;
+  height: 90px;
+}
+.shopAddress{
+  margin-left: 5px;
+  color: rgb(120,120,120);
+}
+.shopName{
+  font-weight: bold;
+  font-size: 16px;
+  white-space: nowrap;text-overflow:ellipsis; overflow:hidden;
+}
+.shopSales{
+  color:rgb(120,120,120);
+  font-size: 13px;
+}
+.startSales{
+  color:rgb(120,120,120);
+  margin-left: 10px;
+  margin-top:5px;
+  font-size: 13px;
+}
