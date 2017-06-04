@@ -7,6 +7,7 @@ import {SalesInfoComponent} from './sales-info/sales-info-component/sales-info.c
 import {IndexComponent} from './index/index-component/index.component';
 import {UpdateSellerInfoComponent} from './update-seller/update-seller-info/update-seller-info.component';
 import {ShopComponent} from './index/shop-component/shop.component';
+import {SellerShopComponent} from './index/seller-shop-component/seller-shop.component';
 
 export const rootRouterConfig:Routes=[
   {path:'',component:LoginComponent},
@@ -26,11 +27,16 @@ export const rootRouterConfig:Routes=[
   },{
     path:'index',
     component:IndexComponent,
+    canActivate:[LoginGuard],
     children:[
       {
         path:'',component:ShopComponent
+      },
+      {
+        path:'sellerShop',component:SellerShopComponent
       }
     ]
-  }
+  },
+
 
 ];

@@ -38,6 +38,8 @@ export class LoginComponent implements OnInit {
           this.router.navigateByUrl("/home");
         }else if(user=="customer"){
           this.router.navigateByUrl("/index");
+        }else{
+          this.loginResult=false;
         }
 
     },error=>{this.loginResult=false;})

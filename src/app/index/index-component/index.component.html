@@ -1,19 +1,2 @@
-<div id="allHeader">
-  <div id="header">
-    <img id="logoImg" src="../../../assets/img/logoText.png" height="36" width="163"/>
-    <nav id="navDiv">
-      <div class="eachNav navActivated">首页</div>
-      <div class="eachNav">我的订单</div>
-    </nav>
-    <nav id="otherNav">
-      <img src="../../../assets/img/serviceCenter.png"/>
-      <div class="otherEachNav">服务中心</div>
-      <div class="otherEachNav">关于我们</div>
-      <div id="customerInfo">
-        <img id="customerProfile" [src]="customer?customer.customerProfile:'upload/userImg.png'">
-        <span id="customerName">{{customer?customer.customerName:none}}</span>
-      </div>
-    </nav>
-  </div>
-</div>
+<app-index-header></app-index-header>
 <router-outlet></router-outlet>

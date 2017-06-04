@@ -38,7 +38,12 @@ export class AddGoodsComponent implements OnInit {
   {label:'炒菜', value:{type:'炒菜',label:'炒菜'}},
   {label:'火锅', value:{type:'火锅',label:'火锅'}},
   {label:'凉菜', value:{type:'凉菜',label:'凉菜'}},
-  {label:'烧烤', value:{type:'凉菜',label:'烧烤'}}
+  {label:'烧烤', value:{type:'凉菜',label:'烧烤'}},
+    {label:'蛋糕', value:{type:'蛋糕',label:'蛋糕'}},
+  {label:'下午茶', value:{type:'下午茶',label:'下午茶'}},
+    {label:'甜品', value:{type:'甜品',label:'甜品'}},
+    {label:'水果', value:{type:'水果',label:'水果'}},
+    {label:'料理', value:{type:'料理',label:'料理'}},
 ];
   goodsRebate=[
     {label:'请选择商品的折扣', value:null},

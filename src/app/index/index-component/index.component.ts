@@ -8,13 +8,7 @@ import {UserService} from '../../login/user.service';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-  customer:any;
-  constructor(private userService:UserService) {
-
-  }
-
-  ngOnInit() {
-    this.userService.getUser().subscribe(res=>this.customer=res);
+  ngOnInit(): void {
   }
 
 }
